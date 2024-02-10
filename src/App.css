@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
+:root {
+    --main-color: #780000;
+    --button-height: 52px;
+    --gap: 16px;
+    --color-black: #121212;
+    --color-white: #f1f2f3;
+    --color-border: #273043;
+    --height-normal: 52px;
+    --element-padding: 8px;
+    --border-radius: 4px;
+}
+body {
+    background-color: var(--color-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    padding: var(--gap);
+}
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+}
+#root {
+    width: 90vw;
+    max-width: 430px;
+    background-color: var(--color-white);
+    padding: var(--gap);
+    position: relative;
+    min-height: calc(100vh - 2 * var(--gap));
+    display: flex;
+    flex-direction: column;
+}
+.content-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+}
+.init-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    text-align: center;
+}
+.list-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: var(--gap);
+    padding-inline: 0;
+}
+.list-container li {
+    min-height: 52px;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.25);
+    border-radius: var(--border-radius);
+}
+.list-container .item-container,
+.list-container form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 var(--gap);
+}
+.list-container li button {
+    border: 0;
+}
+.list-container .item-container input[type=checkbox] {
+    margin-right: 10px;
+}
+.list-container input[type=text] {
+    background-color: transparent;
+    border: 0;
+}
+.list-container input[type=text]:focus {
+    outline: 0;
+}
+.add-container {
+    position: sticky;
+    width: 100%;
+    bottom: var(--gap);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+.add-container input, .add-container button {
+    padding: var(--element-padding);
+    border-radius: var(--border-radius);
+    height: var(--height-normal);
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius);
+}
+.add-container input {
+    border: 1px solid var(--color-border);
+}
+.add-container button {
+    justify-content: center;
+    background-color: var(--main-color);
+    color: var(--color-white);
+    border: 1px solid var(--main-color);
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.filter-container {
+    position: sticky;
+    top: var(--gap);
+    width: 100%;
+    display: flex;
+    gap: var(--gap);
+}
+.filter-container, .filter-action-container {
+    height: 48px;
+}
+.filter-container button {
+    border: 0;
+}
+.filter-container button[aria-pressed=true] {
+    font-weight: 600;
+    text-decoration: underline;
+}
+.filter-action-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.clear-action {
+    text-transform: uppercase;
+    color: var(--main-color);
+    border: 0;
+    text-decoration: underline;
+}
+.filter-action {
+    border: 0;
+    padding-right: 5px;
+    padding-inline: 0;
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
